@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unarchiver.ConsoleApp", "Unarchiver.ConsoleApp\Unarchiver.ConsoleApp.csproj", "{5ED04CF7-B83E-430B-8212-96C097085110}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unarchiver", "Unarchiver\Unarchiver.csproj", "{3FF15E7E-659F-46B9-A09A-A3EA47A896DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5ED04CF7-B83E-430B-8212-96C097085110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ED04CF7-B83E-430B-8212-96C097085110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ED04CF7-B83E-430B-8212-96C097085110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ED04CF7-B83E-430B-8212-96C097085110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FF15E7E-659F-46B9-A09A-A3EA47A896DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FF15E7E-659F-46B9-A09A-A3EA47A896DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FF15E7E-659F-46B9-A09A-A3EA47A896DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FF15E7E-659F-46B9-A09A-A3EA47A896DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
