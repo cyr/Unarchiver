@@ -10,10 +10,12 @@ namespace Unarchiver
 {
     public class Archive
     {
+        public DirectoryInfo Directory { get; }
         public readonly List<FileInfo> Files = new List<FileInfo>();
 
-        public Archive(string name)
+        public Archive(string name, DirectoryInfo directory)
         {
+            Directory = directory;
             Name = name;
         }
 

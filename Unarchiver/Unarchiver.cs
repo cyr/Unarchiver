@@ -20,7 +20,7 @@ namespace Unarchiver
             if (!_basePath.Exists)
                 throw new ArgumentException("Path does not exist.");
 
-            var folders = GetFolders(_basePath);
+            var folders = GetAllFolders(_basePath);
 
             return folders
                 .SelectMany(GetArchives).AsParallel()
@@ -28,7 +28,7 @@ namespace Unarchiver
                 .ToArray();
         }
 
-        private static List<DirectoryInfo> GetFolders(DirectoryInfo di)
+        private static List<DirectoryInfo> GetAllFolders(DirectoryInfo di)
         {
             var folders = new List<DirectoryInfo> {di};
             folders.AddRange(di.GetDirectories("*", SearchOption.AllDirectories));
@@ -62,7 +62,7 @@ namespace Unarchiver
 
             if (!archives.TryGetValue(name, out archive))
             {
-                archive = new Archive(name);
+                archive = new Archive(name, file.Directory);
                 archives[name] = archive;
             }
 
@@ -88,8 +88,10 @@ namespace Unarchiver
 
                 while (reader.MoveToNextEntry())
                 {
-                    reader.WriteEntryToDirectory(_basePath.FullName, ExtractOptions.Overwrite | ExtractOptions.ExtractFullPath);
+                    if (File.Exists(Path.Combine(archive.Directory.FullName, reader.Entry.Key)))
+                        continue;
 
+                    reader.WriteEntryToDirectory(archive.Directory.FullName, ExtractOptions.Overwrite | ExtractOptions.ExtractFullPath);
                     createdEntries.Add(reader.Entry.Key);
                 }
             }
